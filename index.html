@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombre App</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h1>Nombre App</h1>
+        <p>José Gamboa</p>
+    </div>
+
+    <div class="content">
+        <h2>Lista de Actividades</h2>
+        <table id="tabla-actividades">
+            <thead>
+                <tr>
+                    <th>Acciones</th>
+                    <th>Actividad</th>
+                    <th>Nota</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="acciones">
+                        <button class="btn btn-modificar" onclick="abrirModalModificar(this)">Modificar</button>
+                        <button class="btn btn-eliminar" onclick="eliminarActividad(this)">Eliminar</button>
+                    </td>
+                    <td>Actividad 1</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td class="acciones">
+                        <button class="btn btn-modificar" onclick="abrirModalModificar(this)">Modificar</button>
+                        <button class="btn btn-eliminar" onclick="eliminarActividad(this)">Eliminar</button>
+                    </td>
+                    <td>Actividad 2</td>
+                    <td>3</td>
+                </tr>
+                <tr class="last-row">
+                    <td class="acciones">
+                        <button class="btn btn-agregar" onclick="abrirModalAgregar()">Agregar Actividad</button>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="promedio-seccion">
+            <h3>Promedio: <span id="promedio">0</span></h3>
+            <h3>Estado: <span id="estado">Reprobó</span></h3>
+        </div>
+    </div>
+
+    <div id="modal-modificar" class="modal">
+        <div class="modal-content">
+            <h2>Modificar Actividad</h2>
+            <form id="form-modificar">
+                <label for="actividad-modificar">Actividad:</label>
+                <input type="text" id="actividad-modificar" name="actividad" required>
+
+                <label for="nota-modificar">Nota:</label>
+                <input type="number" id="nota-modificar" name="nota" min="0" max="5" required>
+
+                <div class="modal-buttons">
+                    <button type="button" class="btn" onclick="cerrarModalModificar()">Cancelar</button>
+                    <button type="submit" class="btn btn-modificar">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-agregar" class="modal">
+        <div class="modal-content">
+            <h2>Agregar Actividad</h2>
+            <form id="form-agregar">
+                <label for="actividad-agregar">Actividad:</label>
+                <input type="text" id="actividad-agregar" name="actividad" required>
+
+                <label for="nota-agregar">Nota:</label>
+                <input type="number" id="nota-agregar" name="nota" min="0" max="5" required>
+
+                <div class="modal-buttons">
+                    <button type="button" class="btn" onclick="cerrarModalAgregar()">Cancelar</button>
+                    <button type="submit" class="btn btn-agregar">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js.js"></script>
+</body>
+</html>
+
